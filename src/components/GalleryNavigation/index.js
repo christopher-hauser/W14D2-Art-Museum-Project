@@ -1,9 +1,9 @@
-import { NavLink, Switch, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './GalleryNavigation.css';
 
 
 const GalleryNavigation = ({ galleries }) => {
-    console.log(galleries);
+    // console.log(galleries);
     return (
         <div>
             <nav>
