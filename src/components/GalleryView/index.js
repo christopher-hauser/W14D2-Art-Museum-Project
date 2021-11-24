@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ArtImageTile from '../ArtImageTile';
+import ArtDescription from '../ArtDescription'
 
 
 const GalleryView = ({ galleries }) => {
@@ -7,7 +8,12 @@ const GalleryView = ({ galleries }) => {
     const gallery = galleries.find(gallery => gallery.id === +galleryId)
 
     const list = gallery.objects.map(art => {
-        return <ArtImageTile art={art} galleryId={galleryId}></ArtImageTile>
+        return (
+            <>
+            <ArtImageTile art={art} galleryId={galleryId}></ArtImageTile>
+            <ArtDescription art={art} galleryId={galleryId}></ArtDescription>
+            </>
+        )
     })
 
 
@@ -25,8 +31,3 @@ const GalleryView = ({ galleries }) => {
 }
 
 export default GalleryView;
-
-
-// for (let i = 0; i < gallery.objects; i++) {
-//     const galleryObject = gallery.objects[i];
-//     const image = galleryObject.images[0];
